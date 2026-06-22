@@ -70,7 +70,13 @@ body {
    ============================================================ */
 .font-display { font-family: var(--font-display); }
 .font-serif-elegant { font-family: var(--font-serif); }
-.font-deva { font-family: var(--font-deva); }
+/* Devanagari glyphs carry matras above & below the line — give them room so
+   large sizes (which Tailwind sets to line-height:1) never clip the marks. */
+.font-deva {
+  font-family: var(--font-deva);
+  line-height: 1.5;
+  padding-block: 0.06em;
+}
 
 /* Numeric weight helpers (Tailwind v4 doesn't ship font-700 utilities) */
 .font-400 { font-weight: 400; }
