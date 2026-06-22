@@ -1,0 +1,303 @@
+@import "tailwindcss";
+
+/* ============================================================
+   VACHIKA LEKHINI — Sacred Design System (Tailwind v4)
+   ============================================================ */
+@theme {
+  /* Color tokens */
+  --color-bg: #0d0703;
+  --color-bg-2: #1a0e08;
+  --color-gold: #f4c95d;
+  --color-gold-rich: #d9a441;
+  --color-amber: #ffb347;
+  --color-saffron: #ff8c00;
+  --color-ink: #fff8e8;
+  --color-muted: #d9cfc0;
+
+  /* Fonts */
+  --font-display: "Cinzel", serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  --font-deva: "Noto Sans Devanagari", serif;
+
+  /* Easing */
+  --ease-sacred: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root {
+  --glow: rgba(244, 201, 93, 0.35);
+  color-scheme: dark;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  font-feature-settings: "liga" 1, "calt" 1;
+}
+
+/* Selection */
+::selection {
+  background: rgba(244, 201, 93, 0.3);
+  color: #fff8e8;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0703;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#d9a441, #8a5a18);
+  border-radius: 99px;
+  border: 2px solid #0d0703;
+}
+
+/* ============================================================
+   Typography helpers
+   ============================================================ */
+.font-display { font-family: var(--font-display); }
+.font-serif-elegant { font-family: var(--font-serif); }
+.font-deva { font-family: var(--font-deva); }
+
+/* Numeric weight helpers (Tailwind v4 doesn't ship font-700 utilities) */
+.font-400 { font-weight: 400; }
+.font-500 { font-weight: 500; }
+.font-600 { font-weight: 600; }
+.font-700 { font-weight: 700; }
+.font-800 { font-weight: 800; }
+.font-900 { font-weight: 900; }
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #fff1c9 0%, #f4c95d 35%, #d9a441 65%, #b8801f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.text-saffron-gradient {
+  background: linear-gradient(135deg, #ffd27a 0%, #ffb347 40%, #ff8c00 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* ============================================================
+   Surfaces
+   ============================================================ */
+.glass {
+  background: linear-gradient(
+    155deg,
+    rgba(60, 38, 18, 0.55) 0%,
+    rgba(26, 14, 8, 0.35) 100%
+  );
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+  border: 1px solid rgba(244, 201, 93, 0.16);
+}
+
+.gold-hairline {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(#140b05, #140b05) padding-box,
+    linear-gradient(135deg, rgba(244, 201, 93, 0.55), rgba(244, 201, 93, 0.05) 45%, rgba(244, 201, 93, 0.4)) border-box;
+}
+
+/* ============================================================
+   Glows & shadows
+   ============================================================ */
+.glow-gold {
+  box-shadow:
+    0 0 40px -8px rgba(244, 201, 93, 0.45),
+    0 0 0 1px rgba(244, 201, 93, 0.1) inset;
+}
+.text-glow {
+  text-shadow: 0 0 28px rgba(244, 201, 93, 0.45), 0 2px 30px rgba(255, 140, 0, 0.25);
+}
+.drop-glow {
+  filter: drop-shadow(0 0 18px rgba(244, 201, 93, 0.4));
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+.btn-sacred {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 2.2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #2a1602;
+  background: linear-gradient(135deg, #ffe7a6 0%, #f4c95d 35%, #e0a93f 70%, #c98a26 100%);
+  box-shadow:
+    0 10px 30px -8px rgba(217, 164, 65, 0.6),
+    0 0 0 1px rgba(255, 240, 200, 0.5) inset;
+  transition: transform 0.4s var(--ease-sacred), box-shadow 0.4s var(--ease-sacred);
+  overflow: hidden;
+}
+.btn-sacred::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.7) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.9s var(--ease-sacred);
+}
+.btn-sacred:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 18px 44px -8px rgba(244, 201, 93, 0.7),
+    0 0 0 1px rgba(255, 240, 200, 0.7) inset;
+}
+.btn-sacred:hover::after {
+  transform: translateX(120%);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 2.1rem;
+  border-radius: 999px;
+  font-weight: 500;
+  color: var(--color-gold);
+  border: 1px solid rgba(244, 201, 93, 0.4);
+  background: rgba(244, 201, 93, 0.04);
+  transition: all 0.4s var(--ease-sacred);
+}
+.btn-ghost:hover {
+  background: rgba(244, 201, 93, 0.12);
+  border-color: rgba(244, 201, 93, 0.7);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   Decorative dividers / labels
+   ============================================================ */
+.eyebrow {
+  font-family: var(--font-display);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--color-gold);
+}
+
+.divider-glyph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: rgba(244, 201, 93, 0.6);
+}
+.divider-glyph::before,
+.divider-glyph::after {
+  content: "";
+  height: 1px;
+  width: clamp(40px, 12vw, 160px);
+  background: linear-gradient(90deg, transparent, rgba(244, 201, 93, 0.5));
+}
+.divider-glyph::after {
+  background: linear-gradient(90deg, rgba(244, 201, 93, 0.5), transparent);
+}
+
+/* ============================================================
+   Keyframe animations
+   ============================================================ */
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+@keyframes floaty-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1.5deg); }
+}
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+@keyframes spin-reverse {
+  to { transform: rotate(-360deg); }
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes ray-sweep {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 0.6; }
+}
+
+.animate-floaty { animation: floaty 6s ease-in-out infinite; }
+.animate-floaty-slow { animation: floaty-slow 9s ease-in-out infinite; }
+.animate-spin-slow { animation: spin-slow 60s linear infinite; }
+.animate-spin-reverse { animation: spin-reverse 90s linear infinite; }
+.animate-pulse-glow { animation: pulse-glow 5s ease-in-out infinite; }
+
+/* Shimmering gold text on hover targets */
+.shimmer-gold {
+  background: linear-gradient(
+    100deg,
+    #d9a441 20%,
+    #fff1c9 40%,
+    #f4c95d 50%,
+    #d9a441 60%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+/* ============================================================
+   Section rhythm
+   ============================================================ */
+.section {
+  position: relative;
+  padding-block: clamp(5rem, 12vw, 9rem);
+}
+.container-x {
+  width: 100%;
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 3rem);
+}
+
+/* Sacred geometry faint backdrop */
+.bg-geometry {
+  background-image:
+    radial-gradient(circle at 50% 0%, rgba(255, 140, 0, 0.12), transparent 55%),
+    radial-gradient(circle at 50% 120%, rgba(244, 201, 93, 0.08), transparent 50%);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
