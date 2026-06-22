@@ -13,7 +13,7 @@ export default function Footer() {
               <BrandMark size={44} rounded={13} />
               <div>
                 <p className="brand-latin font-display text-lg font-700 text-gold-gradient">
-                  Vachika Lekhini
+                  Vaachaka Lekhini
                 </p>
                 <p className="font-deva text-sm text-amber/80">वाचक लेखिनी</p>
               </div>
@@ -38,7 +38,6 @@ export default function Footer() {
               links={[
                 [t("nav.privacy"), "privacy"],
                 [t("footer.movement"), "movement"],
-                [t("footer.about"), "about"],
                 [t("footer.earlyAccess"), "cta"],
               ]}
             />
@@ -54,7 +53,7 @@ export default function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-gold/10 pt-6 text-center text-xs text-muted/60 md:flex-row md:text-left">
           <p>
-            © {year} Vachika Lekhini · {t("footer.poweredBy")}{" "}
+            © {year} Vaachaka Lekhini · {t("footer.poweredBy")}{" "}
             <span className="brand-latin text-gold/80">Srinishtha Technologies LLP</span>
           </p>
           <p className="font-deva text-amber/60">श्री राम जय राम जय जय राम</p>

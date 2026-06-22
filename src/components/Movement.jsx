@@ -15,7 +15,7 @@ export default function Movement() {
       className="section relative overflow-hidden"
       style={{
         background:
-          "radial-gradient(120% 80% at 50% 0%, #1a0e08 0%, #0d0703 70%)",
+          "radial-gradient(120% 80% at 50% 0%, #f7e8cd 0%, #fbf3e3 70%)",
       }}
     >
       <div className="container-x">

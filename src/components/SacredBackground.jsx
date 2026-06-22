@@ -1,35 +1,36 @@
 import { useMemo } from "react";
 import { motion } from "framer-motion";
 
-/** Fixed, full-page sacred atmosphere: gradients, light rays, floating embers,
- *  faint sacred geometry, and a temple-horizon silhouette. */
+/** Fixed, full-page sacred atmosphere — light "dawn at the temple" mood:
+ *  warm parchment sky, soft sun rays, drifting golden motes, faint sacred
+ *  geometry, and a warm temple-horizon silhouette. */
 export default function SacredBackground() {
-  const embers = useMemo(
+  const motes = useMemo(
     () =>
-      Array.from({ length: 34 }, (_, i) => ({
+      Array.from({ length: 26 }, (_, i) => ({
         id: i,
         left: Math.random() * 100,
-        size: 1.5 + Math.random() * 3.5,
+        size: 2 + Math.random() * 4,
         delay: Math.random() * 12,
-        duration: 14 + Math.random() * 18,
+        duration: 16 + Math.random() * 18,
         drift: (Math.random() - 0.5) * 60,
-        opacity: 0.15 + Math.random() * 0.5,
+        opacity: 0.12 + Math.random() * 0.28,
       })),
     []
   );
 
   return (
-    <div aria-hidden className="fixed inset-0 -z-10 overflow-hidden bg-bg">
-      {/* Base radial warmth */}
+    <div aria-hidden className="fixed inset-0 -z-10 overflow-hidden" style={{ background: "#fbf3e3" }}>
+      {/* Dawn wash */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(120% 80% at 50% -10%, #2a160a 0%, #160c06 38%, #0d0703 72%)",
+            "radial-gradient(120% 80% at 50% -10%, #fff6e2 0%, #fdeccf 38%, #f6e3c4 72%)",
         }}
       />
 
-      {/* Animated gold light rays from top */}
+      {/* Soft sun rays from top */}
       <div className="absolute left-1/2 top-[-30%] h-[120vh] w-[140vw] -translate-x-1/2">
         {[...Array(7)].map((_, i) => (
           <motion.div
@@ -38,10 +39,10 @@ export default function SacredBackground() {
             style={{
               transform: `translateX(-50%) rotate(${(i - 3) * 13}deg)`,
               background:
-                "linear-gradient(to bottom, rgba(255,179,71,0.16), rgba(244,201,93,0.04) 45%, transparent 75%)",
-              filter: "blur(14px)",
+                "linear-gradient(to bottom, rgba(255,179,71,0.18), rgba(210,84,26,0.05) 45%, transparent 75%)",
+              filter: "blur(16px)",
             }}
-            animate={{ opacity: [0.2, 0.55, 0.2] }}
+            animate={{ opacity: [0.18, 0.4, 0.18] }}
             transition={{
               duration: 7 + i,
               repeat: Infinity,
@@ -54,13 +55,13 @@ export default function SacredBackground() {
 
       {/* Faint rotating sacred geometry (mandala rings) */}
       <svg
-        className="absolute left-1/2 top-1/2 h-[150vmin] w-[150vmin] -translate-x-1/2 -translate-y-1/2 opacity-[0.08]"
+        className="absolute left-1/2 top-1/2 h-[150vmin] w-[150vmin] -translate-x-1/2 -translate-y-1/2 opacity-[0.07]"
         viewBox="0 0 600 600"
         fill="none"
       >
         <g
-          stroke="#f4c95d"
-          strokeWidth="0.6"
+          stroke="#b07d18"
+          strokeWidth="0.7"
           className="animate-spin-slow"
           style={{ transformOrigin: "300px 300px" }}
         >
@@ -80,27 +81,24 @@ export default function SacredBackground() {
           })}
         </g>
         <g
-          stroke="#ffb347"
-          strokeWidth="0.5"
+          stroke="#d2541a"
+          strokeWidth="0.6"
           className="animate-spin-reverse"
           style={{ transformOrigin: "300px 300px" }}
         >
           <circle cx="300" cy="300" r="170" />
-          {[...Array(12)].map((_, i) => {
-            const a = (i / 12) * Math.PI * 2;
-            return (
-              <polygon
-                key={i}
-                points="300,140 320,180 280,180"
-                transform={`rotate(${(i / 12) * 360} 300 300)`}
-              />
-            );
-          })}
+          {[...Array(12)].map((_, i) => (
+            <polygon
+              key={i}
+              points="300,140 320,180 280,180"
+              transform={`rotate(${(i / 12) * 360} 300 300)`}
+            />
+          ))}
         </g>
       </svg>
 
-      {/* Floating embers / particles */}
-      {embers.map((e) => (
+      {/* Drifting golden motes */}
+      {motes.map((e) => (
         <motion.span
           key={e.id}
           className="absolute rounded-full"
@@ -110,8 +108,7 @@ export default function SacredBackground() {
             width: e.size,
             height: e.size,
             background:
-              "radial-gradient(circle, rgba(255,221,150,0.95), rgba(255,140,0,0.2) 60%, transparent)",
-            boxShadow: "0 0 8px rgba(255,179,71,0.7)",
+              "radial-gradient(circle, rgba(210,140,40,0.9), rgba(210,84,26,0.2) 60%, transparent)",
           }}
           animate={{
             y: ["0vh", "-108vh"],
@@ -127,48 +124,67 @@ export default function SacredBackground() {
         />
       ))}
 
-      {/* Temple horizon silhouette at the bottom */}
+      {/* Ayodhya Ram Mandir horizon — hand-drawn Nagara silhouette */}
       <div className="absolute inset-x-0 bottom-0">
         <div
-          className="absolute inset-x-0 bottom-0 h-[40vh]"
+          className="absolute inset-x-0 bottom-0 h-[42vh]"
           style={{
             background:
-              "linear-gradient(to top, rgba(255,140,0,0.12), transparent)",
+              "linear-gradient(to top, rgba(226,140,43,0.22), rgba(244,201,93,0.08) 45%, transparent)",
           }}
         />
         <svg
           className="relative w-full"
           viewBox="0 0 1440 240"
           preserveAspectRatio="xMidYMax meet"
-          fill="#070401"
+          fill="#caa15a"
         >
-          <g opacity="0.92">
-            {/* central shikhara */}
-            <path d="M690 240 V120 C700 96 712 70 720 50 C728 70 740 96 750 120 V240 Z" />
-            <rect x="704" y="40" width="32" height="14" rx="3" />
-            <circle cx="720" cy="30" r="7" />
-            {/* side temples */}
-            <path d="M560 240 V150 C566 132 576 112 582 100 C588 112 598 132 604 150 V240 Z" />
-            <path d="M836 240 V150 C842 132 852 112 858 100 C864 112 874 132 880 150 V240 Z" />
-            {/* gopuram steps left */}
-            <path d="M120 240 V170 L150 150 L150 130 L200 110 L250 130 L250 150 L280 170 V240 Z" />
-            {/* gopuram steps right */}
-            <path d="M1160 240 V170 L1190 150 L1190 130 L1240 110 L1290 130 L1290 150 L1320 170 V240 Z" />
-            {/* low rooftops */}
-            <rect x="380" y="190" width="120" height="50" />
-            <rect x="940" y="190" width="120" height="50" />
-            <rect x="40" y="205" width="80" height="35" />
-            <rect x="1320" y="205" width="80" height="35" />
+          <g opacity="0.55">
+            {/* stepped plinth */}
+            <rect x="372" y="222" width="696" height="18" />
+            <rect x="404" y="204" width="632" height="20" />
+            {/* pillared hall hint */}
+            {[...Array(15)].map((_, i) => (
+              <rect key={i} x={426 + i * 40} y="190" width="6" height="16" />
+            ))}
+            {/* seven shikharas, graduating to the central vimana */}
+            {[
+              [486, 74, 60],
+              [566, 102, 72],
+              [650, 130, 84],
+              [720, 160, 104],
+              [790, 130, 84],
+              [874, 102, 72],
+              [954, 74, 60],
+            ].map(([x, h, w]) => {
+              const b = 192;
+              const ay = b - h;
+              return (
+                <g key={x}>
+                  <path
+                    d={`M${x - w / 2} ${b} C ${x - w / 2} ${b - h * 0.42} ${x - w * 0.15} ${b - h * 0.9} ${x} ${ay} C ${x + w * 0.15} ${b - h * 0.9} ${x + w / 2} ${b - h * 0.42} ${x + w / 2} ${b} Z`}
+                  />
+                  <circle cx={x} cy={ay - 5} r="3.4" />
+                  <line x1={x} y1={ay} x2={x} y2={ay - 9} stroke="#caa15a" strokeWidth="2" />
+                </g>
+              );
+            })}
+            {/* central dhwaja (flag) */}
+            <line x1="720" y1="20" x2="720" y2="32" stroke="#caa15a" strokeWidth="2.5" />
+            <path d="M720 20 l20 6 l-20 6 Z" />
+            {/* distant minor shrines */}
+            <rect x="150" y="214" width="110" height="26" />
+            <rect x="1180" y="214" width="110" height="26" />
           </g>
         </svg>
       </div>
 
-      {/* Vignette */}
+      {/* Light top vignette so the nav reads */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(120% 100% at 50% 40%, transparent 55%, rgba(5,2,0,0.65) 100%)",
+            "radial-gradient(120% 100% at 50% 30%, transparent 60%, rgba(180,128,31,0.08) 100%)",
         }}
       />
     </div>

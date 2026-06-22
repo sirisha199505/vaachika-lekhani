@@ -6,7 +6,7 @@ import { useI18n } from "../i18n/I18nProvider";
 export default function NameMeaning() {
   const { t } = useI18n();
   const PARTS = [
-    { deva: "वाचक", roman: "Vachika", roles: t("meaning.vachikaRoles"), root: t("meaning.vachikaRoot") },
+    { deva: "वाचक", roman: "Vaachaka", roles: t("meaning.vachikaRoles"), root: t("meaning.vachikaRoot") },
     { deva: "लेखिनी", roman: "Lekhini", roles: t("meaning.lekhiniRoles"), root: t("meaning.lekhiniRoot") },
   ];
 

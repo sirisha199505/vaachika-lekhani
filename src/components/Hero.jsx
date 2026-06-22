@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import PhoneMockup from "./PhoneMockup";
 import { useI18n } from "../i18n/I18nProvider";
 
 const EASE = [0.22, 1, 0.36, 1];
@@ -57,7 +56,7 @@ export default function Hero() {
             transition={{ duration: 0.9, delay: 0.1, ease: EASE }}
             className="brand-latin mt-2 font-display text-5xl sm:text-6xl md:text-[3.6rem] lg:text-6xl font-800 leading-[1.02] text-gold-gradient"
           >
-            Vachika Lekhini
+            Vaachaka Lekhini
           </motion.h1>
 
           <motion.p
@@ -109,23 +108,38 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Phone */}
+        {/* Sacred image */}
         <motion.div style={{ y: phoneY }} className="relative flex justify-center">
           {/* aura */}
           <div
-            className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full animate-pulse-glow sm:h-[350px] sm:w-[350px] lg:h-[400px] lg:w-[400px]"
+            className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full animate-pulse-glow sm:h-[360px] sm:w-[360px] lg:h-[440px] lg:w-[440px]"
             style={{
               background:
-                "radial-gradient(circle, rgba(244,201,93,0.35), rgba(255,140,0,0.12) 45%, transparent 70%)",
+                "radial-gradient(circle, rgba(226,140,43,0.35), rgba(210,84,26,0.12) 45%, transparent 70%)",
             }}
           />
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 40 }}
+            initial={{ opacity: 0, scale: 0.92, y: 36 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1.1, delay: 0.3, ease: EASE }}
             className="relative animate-floaty-slow"
           >
-            <PhoneMockup />
+            <div className="relative mx-auto w-[240px] sm:w-[300px] lg:w-[360px]">
+              {/* decorative gold frame */}
+              <div className="gold-hairline overflow-hidden rounded-[2rem] p-2 glow-gold">
+                <img
+                  src="/Baala%20Rama_01_Vachakalekhini.svg"
+                  alt="Baala Rama — the divine child, at the temple"
+                  width="810"
+                  height="1012"
+                  loading="eager"
+                  className="h-auto w-full rounded-[1.5rem] object-cover"
+                />
+              </div>
+              {/* corner glints */}
+              <span className="pointer-events-none absolute -left-3 -top-3 text-2xl text-saffron/70">✦</span>
+              <span className="pointer-events-none absolute -bottom-3 -right-3 text-2xl text-gold/70">✦</span>
+            </div>
           </motion.div>
         </motion.div>
       </div>

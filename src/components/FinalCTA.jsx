@@ -13,7 +13,7 @@ export default function FinalCTA() {
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(120% 90% at 50% 120%, #ff8c00 0%, #c25600 22%, #3a1c06 50%, #0d0703 80%)",
+              "radial-gradient(120% 95% at 50% 125%, #ffb347 0%, #e2641a 24%, #f1d8a6 56%, #fbf3e3 82%)",
           }}
         />
         <motion.div
@@ -28,7 +28,7 @@ export default function FinalCTA() {
         <svg
           className="absolute inset-x-0 bottom-0 w-full"
           viewBox="0 0 1440 200"
-          fill="#0a0502"
+          fill="#7a3c0e"
           preserveAspectRatio="xMidYMax meet"
         >
           <path d="M700 200 V90 q20 -50 20 -64 q4 14 20 64 V200 Z" />

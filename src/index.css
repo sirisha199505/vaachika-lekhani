@@ -4,15 +4,23 @@
    VACHIKA LEKHINI — Sacred Design System (Tailwind v4)
    ============================================================ */
 @theme {
-  /* Color tokens */
-  --color-bg: #0d0703;
-  --color-bg-2: #1a0e08;
-  --color-gold: #f4c95d;
-  --color-gold-rich: #d9a441;
-  --color-amber: #ffb347;
-  --color-saffron: #ff8c00;
-  --color-ink: #fff8e8;
-  --color-muted: #d9cfc0;
+  /* Color tokens — "Saffron & parchment with temple teal" (brand palette) */
+  --color-bg: #fbf3e2;          /* warm parchment */
+  --color-bg-2: #f5eac9;        /* aged paper (panels) */
+  --color-surface: #ffffff;     /* white cards */
+  --color-ink: #2a1f14;         /* body text (deep brown-black) */
+  --color-muted: #5a4a3a;       /* soft warm-brown text */
+  --color-taupe: #9a8a78;       /* muted captions */
+  --color-saffron: #e8893b;     /* primary — saffron orange */
+  --color-burnt: #c97328;       /* primary deep — burnt orange */
+  --color-peach: #fde2c5;       /* primary soft — pale peach */
+  --color-teal: #1f6f6b;        /* accent — temple teal */
+  --color-success: #2e8b57;     /* forest green */
+  --color-gold: #a8761a;        /* readable gold for accent text/borders */
+  --color-gold-rich: #d4a300;   /* turmeric gold — highlight in gradients/fills */
+  --color-amber: #e8893b;       /* warm accent alias = primary saffron */
+  --color-danger: #e53935;
+  --color-border: #ead8b8;      /* warm sand */
 
   /* Fonts */
   --font-display: "Cinzel", serif;
@@ -25,11 +33,11 @@
 }
 
 :root {
-  --glow: rgba(244, 201, 93, 0.35);
+  --glow: rgba(201, 152, 31, 0.3);
   --font-indic: "Noto Sans Devanagari", "Noto Sans Telugu", "Noto Sans Kannada",
     "Noto Sans Tamil", "Noto Sans Malayalam", "Noto Sans Bengali",
     "Noto Sans Gujarati", "Nirmala UI", sans-serif;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 /* When an Indian-script language is active, the Latin display fonts (Cinzel,
@@ -64,8 +72,8 @@ body {
 
 /* Selection */
 ::selection {
-  background: rgba(244, 201, 93, 0.3);
-  color: #fff8e8;
+  background: rgba(210, 84, 26, 0.22);
+  color: #2a1a0a;
 }
 
 /* Scrollbar */
@@ -73,12 +81,12 @@ body {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0d0703;
+  background: #f4e7cd;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(#d9a441, #8a5a18);
+  background: linear-gradient(#d9a441, #b07d18);
   border-radius: 99px;
-  border: 2px solid #0d0703;
+  border: 2px solid #f4e7cd;
 }
 
 /* ============================================================
@@ -112,7 +120,8 @@ body {
 .font-900 { font-weight: 900; }
 
 .text-gold-gradient {
-  background: linear-gradient(135deg, #fff1c9 0%, #f4c95d 35%, #d9a441 65%, #b8801f 100%);
+  /* "Welcome" gradient — golden → saffron → burnt orange */
+  background: linear-gradient(135deg, #d4a300 0%, #e8893b 48%, #c97328 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -120,7 +129,8 @@ body {
 }
 
 .text-saffron-gradient {
-  background: linear-gradient(135deg, #ffd27a 0%, #ffb347 40%, #ff8c00 100%);
+  /* "Practice active" gradient — deep orange → orange-red */
+  background: linear-gradient(135deg, #e8893b 0%, #c97328 50%, #b5431a 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -131,36 +141,33 @@ body {
    Surfaces
    ============================================================ */
 .glass {
-  background: linear-gradient(
-    155deg,
-    rgba(60, 38, 18, 0.55) 0%,
-    rgba(26, 14, 8, 0.35) 100%
-  );
-  backdrop-filter: blur(14px) saturate(120%);
-  -webkit-backdrop-filter: blur(14px) saturate(120%);
-  border: 1px solid rgba(244, 201, 93, 0.16);
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(10px) saturate(112%);
+  -webkit-backdrop-filter: blur(10px) saturate(112%);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 16px 36px -24px rgba(120, 80, 20, 0.4);
 }
 
 .gold-hairline {
   border: 1px solid transparent;
   background:
-    linear-gradient(#140b05, #140b05) padding-box,
-    linear-gradient(135deg, rgba(244, 201, 93, 0.55), rgba(244, 201, 93, 0.05) 45%, rgba(244, 201, 93, 0.4)) border-box;
+    linear-gradient(#ffffff, #fffaf0) padding-box,
+    linear-gradient(135deg, rgba(232, 137, 59, 0.55), rgba(212, 163, 0, 0.18) 45%, rgba(201, 115, 40, 0.45)) border-box;
 }
 
 /* ============================================================
-   Glows & shadows
+   Glows & shadows (soft warm light-mode shadows)
    ============================================================ */
 .glow-gold {
   box-shadow:
-    0 0 40px -8px rgba(244, 201, 93, 0.45),
-    0 0 0 1px rgba(244, 201, 93, 0.1) inset;
+    0 22px 50px -20px rgba(232, 137, 59, 0.45),
+    0 0 0 1px rgba(212, 163, 0, 0.14) inset;
 }
 .text-glow {
-  text-shadow: 0 0 28px rgba(244, 201, 93, 0.45), 0 2px 30px rgba(255, 140, 0, 0.25);
+  text-shadow: 0 2px 16px rgba(232, 137, 59, 0.2);
 }
 .drop-glow {
-  filter: drop-shadow(0 0 18px rgba(244, 201, 93, 0.4));
+  filter: drop-shadow(0 8px 16px rgba(232, 137, 59, 0.32));
 }
 
 /* ============================================================
@@ -175,11 +182,11 @@ body {
   border-radius: 999px;
   font-weight: 600;
   letter-spacing: 0.02em;
-  color: #2a1602;
-  background: linear-gradient(135deg, #ffe7a6 0%, #f4c95d 35%, #e0a93f 70%, #c98a26 100%);
+  color: #fff8ee;
+  background: linear-gradient(180deg, #f0a35a 0%, #e8893b 50%, #c97328 100%);
   box-shadow:
-    0 10px 30px -8px rgba(217, 164, 65, 0.6),
-    0 0 0 1px rgba(255, 240, 200, 0.5) inset;
+    0 12px 28px -10px rgba(201, 115, 40, 0.6),
+    0 0 0 1px rgba(255, 220, 180, 0.4) inset;
   transition: transform 0.4s var(--ease-sacred), box-shadow 0.4s var(--ease-sacred);
   overflow: hidden;
 }
@@ -194,28 +201,29 @@ body {
 .btn-sacred:hover {
   transform: translateY(-3px);
   box-shadow:
-    0 18px 44px -8px rgba(244, 201, 93, 0.7),
-    0 0 0 1px rgba(255, 240, 200, 0.7) inset;
+    0 20px 40px -10px rgba(232, 137, 59, 0.7),
+    0 0 0 1px rgba(255, 220, 180, 0.6) inset;
 }
 .btn-sacred:hover::after {
   transform: translateX(120%);
 }
 
+/* Secondary CTA — temple teal accent */
 .btn-ghost {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
   padding: 1rem 2.1rem;
   border-radius: 999px;
-  font-weight: 500;
-  color: var(--color-gold);
-  border: 1px solid rgba(244, 201, 93, 0.4);
-  background: rgba(244, 201, 93, 0.04);
+  font-weight: 600;
+  color: var(--color-teal);
+  border: 1px solid rgba(31, 111, 107, 0.45);
+  background: rgba(31, 111, 107, 0.06);
   transition: all 0.4s var(--ease-sacred);
 }
 .btn-ghost:hover {
-  background: rgba(244, 201, 93, 0.12);
-  border-color: rgba(244, 201, 93, 0.7);
+  background: rgba(31, 111, 107, 0.12);
+  border-color: rgba(31, 111, 107, 0.7);
   transform: translateY(-2px);
 }
 
@@ -227,7 +235,8 @@ body {
   letter-spacing: 0.32em;
   text-transform: uppercase;
   font-size: 0.72rem;
-  color: var(--color-gold);
+  font-weight: 600;
+  color: var(--color-burnt);
 }
 
 .divider-glyph {
@@ -235,17 +244,17 @@ body {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  color: rgba(244, 201, 93, 0.6);
+  color: rgba(176, 125, 24, 0.7);
 }
 .divider-glyph::before,
 .divider-glyph::after {
   content: "";
   height: 1px;
   width: clamp(40px, 12vw, 160px);
-  background: linear-gradient(90deg, transparent, rgba(244, 201, 93, 0.5));
+  background: linear-gradient(90deg, transparent, rgba(176, 125, 24, 0.55));
 }
 .divider-glyph::after {
-  background: linear-gradient(90deg, rgba(244, 201, 93, 0.5), transparent);
+  background: linear-gradient(90deg, rgba(176, 125, 24, 0.55), transparent);
 }
 
 /* ============================================================

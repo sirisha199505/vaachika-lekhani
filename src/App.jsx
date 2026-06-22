@@ -10,7 +10,6 @@ import Dashboard from "./components/Dashboard";
 import Languages from "./components/Languages";
 import Movement from "./components/Movement";
 import Privacy from "./components/Privacy";
-import About from "./components/About";
 import FinalCTA from "./components/FinalCTA";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
@@ -30,7 +29,6 @@ export default function App() {
         <Languages />
         <Movement />
         <Privacy />
-        <About />
         <FinalCTA />
       </main>
       <Footer />

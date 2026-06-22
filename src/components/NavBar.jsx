@@ -51,7 +51,7 @@ export default function NavBar() {
           >
             <BrandMark size={40} rounded={12} />
             <span className="brand-latin font-display text-lg font-700 tracking-wide text-gold-gradient">
-              Vachika Lekhini
+              Vaachaka Lekhini
             </span>
           </button>
 

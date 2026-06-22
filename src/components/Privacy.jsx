@@ -12,7 +12,7 @@ export default function Privacy() {
       className="section relative overflow-hidden"
       style={{
         background:
-          "radial-gradient(100% 80% at 50% 0%, #15100a 0%, #0a0604 60%, #070401 100%)",
+          "radial-gradient(100% 80% at 50% 0%, #fdf1d8 0%, #f7e8cd 55%, #f2e0c0 100%)",
       }}
     >
       <div className="container-x grid items-center gap-14 lg:grid-cols-2">
@@ -89,7 +89,7 @@ export default function Privacy() {
                 variants={fadeUp}
                 className="flex items-center gap-3 rounded-xl border border-gold/15 bg-bg-2/40 px-4 py-3"
               >
-                <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-gold/20 text-gold">
+                <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-teal/15 text-teal">
                   ✓
                 </span>
                 <span className="text-sm text-ink/90">{p}</span>
