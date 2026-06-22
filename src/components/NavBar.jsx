@@ -46,11 +46,11 @@ export default function NavBar() {
         <nav className="container-x flex h-[72px] items-center justify-between">
           <button
             onClick={() => go("top")}
-            className="flex items-center gap-3"
+            className="flex items-center gap-2.5"
             aria-label={t("nav.home")}
           >
             <BrandMark size={40} rounded={12} />
-            <span className="brand-latin font-display text-lg font-700 tracking-wide text-gold-gradient">
+            <span className="brand-latin whitespace-nowrap font-display text-base sm:text-lg font-700 tracking-wide text-gold-gradient">
               Vaachaka Lekhini
             </span>
           </button>

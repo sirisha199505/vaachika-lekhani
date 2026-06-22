@@ -31,9 +31,9 @@ export default function LanguageSwitcher({ compact = false }) {
           <circle cx="12" cy="12" r="9" />
           <path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18" />
         </svg>
-        <span className={compact ? "font-indic" : "font-indic max-w-[7rem] truncate"}>
-          {current.native}
-        </span>
+        {!compact && (
+          <span className="font-indic max-w-[7rem] truncate">{current.native}</span>
+        )}
         <svg
           width="12"
           height="12"

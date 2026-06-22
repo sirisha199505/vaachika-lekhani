@@ -73,7 +73,9 @@
   "mantras": {
     "eyebrow": "Mantra Library",
     "title": "A mandala of sacred intentions",
-    "intro": "Eight gateways of devotion. Hover a petal to reveal its purpose.",
+    "intro": "Choose a sacred intention and begin your japa today — hover a petal to reveal its purpose.",
+    "comingSoon": "Coming Soon",
+    "note": "Curated mantras and guided sadhana programs for each intention are being added soon.",
     "cats": [
       { "name": "Wealth & Prosperity", "desc": "Invoke Lakshmi and Kubera for abundance, fortune, and sustained prosperity." },
       { "name": "Peace & Calm", "desc": "Still the restless mind and settle into serene, unshakeable inner peace." },
