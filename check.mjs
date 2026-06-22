@@ -7,13 +7,10 @@ const browser = await puppeteer.launch({
   args: ["--no-sandbox", "--disable-gpu", "--hide-scrollbars"],
 });
 const p = await browser.newPage();
-await p.setViewport({ width: 1440, height: 900, deviceScaleFactor: 1 });
+await p.setViewport({ width: 1440, height: 860, deviceScaleFactor: 1 });
 await p.goto("http://localhost:4173/", { waitUntil: "networkidle0" });
-await new Promise((r) => setTimeout(r, 1200));
-await p.screenshot({ path: `${OUT}fin_hero.png` });
-await p.setViewport({ width: 390, height: 844, deviceScaleFactor: 1.5 });
-await p.goto("http://localhost:4173/", { waitUntil: "networkidle0" });
-await new Promise((r) => setTimeout(r, 1000));
-await p.screenshot({ path: `${OUT}fin_mob.png` });
+await p.evaluate(() => document.getElementById("cta").scrollIntoView({ block: "center" }));
+await new Promise((r) => setTimeout(r, 1300));
+await p.screenshot({ path: `${OUT}fin_cta.png` });
 await browser.close();
 console.log("done");

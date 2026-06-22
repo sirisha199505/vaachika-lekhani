@@ -27,16 +27,35 @@ export default function FinalCTA() {
         />
         <svg
           className="absolute inset-x-0 bottom-0 w-full"
-          viewBox="0 0 1440 200"
+          viewBox="0 0 1440 220"
           fill="#7a3c0e"
           preserveAspectRatio="xMidYMax meet"
         >
-          <path d="M700 200 V90 q20 -50 20 -64 q4 14 20 64 V200 Z" />
-          <circle cx="720" cy="20" r="6" />
-          <path d="M560 200 V120 l28 -18 v-12 l40 -20 l40 20 v12 l28 18 V200 Z" />
-          <path d="M812 200 V120 l28 -18 v-12 l40 -20 l40 20 v12 l28 18 V200 Z" />
-          <rect x="380" y="150" width="120" height="50" />
-          <rect x="940" y="150" width="120" height="50" />
+          {/* Ayodhya Nagara silhouette */}
+          <rect x="372" y="202" width="696" height="18" />
+          <rect x="404" y="186" width="632" height="18" />
+          {[
+            [486, 64, 56],
+            [566, 90, 68],
+            [650, 116, 80],
+            [720, 148, 98],
+            [790, 116, 80],
+            [874, 90, 68],
+            [954, 64, 56],
+          ].map(([x, h, w]) => {
+            const b = 188;
+            const ay = b - h;
+            return (
+              <g key={x}>
+                <path
+                  d={`M${x - w / 2} ${b} C ${x - w / 2} ${b - h * 0.42} ${x - w * 0.15} ${b - h * 0.9} ${x} ${ay} C ${x + w * 0.15} ${b - h * 0.9} ${x + w / 2} ${b - h * 0.42} ${x + w / 2} ${b} Z`}
+                />
+                <circle cx={x} cy={ay - 4} r="3" />
+              </g>
+            );
+          })}
+          <line x1="720" y1="28" x2="720" y2="40" stroke="#7a3c0e" strokeWidth="2.5" />
+          <path d="M720 28 l18 5 l-18 5 Z" />
         </svg>
       </div>
 
