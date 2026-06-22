@@ -42,89 +42,93 @@ export default function PhoneMockup() {
             CHANT. COUNT. CONNECT.
           </p>
 
-          {/* hero deity scene */}
+          {/* hero deity scene — fully inside the SVG so it scales with the phone */}
           <div className="relative mx-3 h-[220px] overflow-hidden rounded-2xl">
-            {/* sunset sky */}
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "radial-gradient(70% 55% at 50% 34%, #ffcf7a 0%, #ff8c1a 28%, #b34700 55%, #3a1c06 85%)",
-              }}
-            />
-            {/* sun */}
-            <div
-              className="absolute left-1/2 top-7 h-24 w-24 -translate-x-1/2 rounded-full animate-pulse-glow"
-              style={{
-                background:
-                  "radial-gradient(circle, rgba(255,248,225,0.98), rgba(255,179,71,0.35) 55%, transparent 75%)",
-              }}
-            />
-
-            {/* scene */}
             <svg
               className="absolute inset-0 h-full w-full"
               viewBox="0 0 320 220"
-              preserveAspectRatio="xMidYMax meet"
+              preserveAspectRatio="xMidYMid slice"
             >
+              <defs>
+                <radialGradient id="sky" cx="50%" cy="40%" r="75%">
+                  <stop offset="0%" stopColor="#ffd98a" />
+                  <stop offset="26%" stopColor="#ff8c1a" />
+                  <stop offset="58%" stopColor="#a84200" />
+                  <stop offset="100%" stopColor="#2a1304" />
+                </radialGradient>
+                <radialGradient id="sun" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stopColor="#fff8e1" />
+                  <stop offset="45%" stopColor="rgba(255,224,150,0.65)" />
+                  <stop offset="100%" stopColor="rgba(255,179,71,0)" />
+                </radialGradient>
+              </defs>
+
+              {/* sky + divine sun (behind the figure) */}
+              <rect width="320" height="220" fill="url(#sky)" />
+              <circle cx="160" cy="96" r="62" fill="url(#sun)" className="animate-pulse-glow" />
+
               {/* temple horizon */}
-              <g fill="#240f02">
-                {/* central shikhara behind Rama */}
-                <path d="M160 220 V96 q8 -26 12 -38 q4 12 12 38 V220 Z" opacity="0.9" />
-                {/* left temples */}
-                <path d="M44 220 V150 l14 -10 v-9 l18 -11 l18 11 v9 l14 10 V220 Z" />
-                <path d="M96 220 V165 l10 -8 v-7 l14 -8 l14 8 v7 l10 8 V220 Z" />
-                {/* right temples */}
-                <path d="M232 220 V150 l14 -10 v-9 l18 -11 l18 11 v9 l14 10 V220 Z" />
-                <path d="M188 220 V168 l9 -7 v-6 l12 -7 l12 7 v6 l9 7 V220 Z" />
-                {/* low rooftops */}
-                <rect x="0" y="196" width="40" height="24" />
-                <rect x="280" y="196" width="40" height="24" />
+              <g fill="#1f0d02">
+                {/* central spire behind Rama */}
+                <path d="M160 220 V108 q5 -22 9 -34 q4 12 9 34 V220 Z" opacity="0.85" />
+                <circle cx="169" cy="70" r="3" opacity="0.85" />
+                {/* left temple cluster */}
+                <path d="M44 220 V146 l16 -12 v-10 l20 -12 l20 12 v10 l16 12 V220 Z" />
+                <path d="M98 220 V168 l11 -9 v-7 l15 -9 l15 9 v7 l11 9 V220 Z" />
+                {/* right temple cluster */}
+                <path d="M232 220 V146 l16 -12 v-10 l20 -12 l20 12 v10 l16 12 V220 Z" />
+                <path d="M184 220 V170 l10 -8 v-6 l13 -8 l13 8 v6 l10 8 V220 Z" />
+                {/* far rooftops */}
+                <rect x="0" y="188" width="44" height="32" />
+                <rect x="276" y="188" width="44" height="32" />
               </g>
 
-              {/* flags on temples */}
-              <g stroke="#ffd27a" strokeWidth="1.3">
-                <line x1="76" y1="120" x2="76" y2="150" />
-                <line x1="244" y1="120" x2="244" y2="150" />
+              {/* flags */}
+              <g stroke="#ffd27a" strokeWidth="1.4">
+                <line x1="80" y1="118" x2="80" y2="146" />
+                <line x1="240" y1="118" x2="240" y2="146" />
               </g>
-              <path d="M76 121 l12 4 l-12 4 Z" fill="#ff8c00" />
-              <path d="M244 121 l-12 4 l12 4 Z" fill="#ff8c00" />
+              <path d="M80 119 l13 4 l-13 4 Z" fill="#ff8c00" />
+              <path d="M240 119 l-13 4 l13 4 Z" fill="#ff8c00" />
+
+              {/* halo behind Sri Rama */}
+              <circle cx="158" cy="98" r="17" fill="none" stroke="#ffe1a3" strokeWidth="1.6" opacity="0.9" />
 
               {/* Sri Rama silhouette holding a bow */}
-              <g fill="#0a0502">
-                {/* robe / body */}
-                <path d="M150 215 q-6 -42 4 -64 q3 -8 6 -10 q3 2 6 10 q10 22 4 64 Z" />
-                {/* shoulders */}
-                <ellipse cx="160" cy="142" rx="13" ry="7" />
+              <g fill="#080401">
+                {/* flowing robe */}
+                <path d="M142 214 C145 176 150 150 152 134 L165 134 C167 150 172 176 175 214 Z" />
+                {/* torso */}
+                <path d="M150 138 C150 124 166 124 166 138 Z" />
+                <ellipse cx="158" cy="124" rx="13" ry="7" />
                 {/* head */}
-                <circle cx="160" cy="128" r="7.5" />
-                {/* crown */}
-                <path d="M153 122 l7 -10 l7 10 Z" />
+                <circle cx="158" cy="104" r="8.5" />
+                {/* tall crown (kireeta) */}
+                <path d="M149 100 Q158 74 167 100 Z" />
+                <path d="M158 72 L156 84 L160 84 Z" />
+                {/* arm reaching to the bow */}
+                <path d="M166 126 L188 150" stroke="#080401" strokeWidth="4.5" strokeLinecap="round" />
               </g>
-              {/* halo */}
-              <circle cx="160" cy="127" r="13" fill="none" stroke="#ffe1a3" strokeWidth="1.4" opacity="0.85" />
-              {/* bow + string (held to his side) */}
-              <path d="M183 116 Q201 160 183 204" fill="none" stroke="#1a0c02" strokeWidth="3" />
-              <line x1="183" y1="116" x2="183" y2="204" stroke="#3a1c06" strokeWidth="1" />
-              {/* arm to bow */}
-              <line x1="168" y1="150" x2="183" y2="160" stroke="#0a0502" strokeWidth="4" strokeLinecap="round" />
 
-              {/* draped mala (prayer beads) on the right */}
+              {/* bow + string */}
+              <path d="M189 96 Q210 152 189 208" fill="none" stroke="#0a0502" strokeWidth="3.2" />
+              <line x1="189" y1="96" x2="189" y2="208" stroke="#5a2e0a" strokeWidth="1" />
+
+              {/* draped mala (prayer beads) */}
               <path
-                d="M250 70 Q278 96 270 140 Q266 162 248 172"
+                d="M252 70 Q288 100 278 150 Q274 172 252 182"
                 fill="none"
-                stroke="#9c5a22"
-                strokeWidth="6"
+                stroke="#a5611f"
+                strokeWidth="6.5"
                 strokeLinecap="round"
-                strokeDasharray="0.5 8"
+                strokeDasharray="0.5 8.5"
               />
-              {/* mala tassel */}
-              <g stroke="#caa15a" strokeWidth="1.4" strokeLinecap="round">
-                <line x1="248" y1="172" x2="246" y2="186" />
-                <line x1="248" y1="172" x2="250" y2="186" />
-                <line x1="248" y1="172" x2="244" y2="184" />
+              <g stroke="#caa15a" strokeWidth="1.5" strokeLinecap="round">
+                <line x1="252" y1="182" x2="250" y2="198" />
+                <line x1="252" y1="182" x2="254" y2="198" />
+                <line x1="252" y1="182" x2="248" y2="196" />
               </g>
-              <circle cx="248" cy="170" r="3.2" fill="#c98a26" />
+              <circle cx="252" cy="180" r="3.4" fill="#d59a3a" />
             </svg>
           </div>
 

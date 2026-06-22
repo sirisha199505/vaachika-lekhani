@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useI18n } from "../i18n/I18nProvider";
 
 /** Floating button that smoothly returns the visitor to the top of the page. */
 export default function ScrollToTop() {
+  const { t } = useI18n();
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -25,7 +27,7 @@ export default function ScrollToTop() {
           whileHover={{ scale: 1.08, y: -2 }}
           whileTap={{ scale: 0.94 }}
           onClick={toTop}
-          aria-label="Back to top"
+          aria-label={t("common.backToTop")}
           className="fixed bottom-5 right-5 z-50 flex h-12 w-12 items-center justify-center rounded-full text-[#2a1602] md:bottom-7 md:right-7"
           style={{
             background:

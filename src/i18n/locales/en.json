@@ -1,0 +1,169 @@
+{
+  "nav": {
+    "meaning": "Meaning",
+    "practice": "Practice",
+    "features": "Features",
+    "mantras": "Mantras",
+    "privacy": "Privacy",
+    "join": "Join Early Access",
+    "language": "Language",
+    "home": "Vachika Lekhini home",
+    "menu": "Toggle menu"
+  },
+  "hero": {
+    "tagline": "Chant with Purpose. Write with Devotion.",
+    "desc": "A sacred digital companion that helps practitioners count, write, and deepen their mantra sadhana through voice, handwriting, and mindful practice.",
+    "joinEarly": "Join Early Access",
+    "exploreFeatures": "Explore Features",
+    "comingSoonOn": "Coming soon on",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "scroll": "Scroll"
+  },
+  "meaning": {
+    "eyebrow": "What does the name mean?",
+    "sacredName": "The Sacred Name",
+    "calligraphyQuote": "Where the spoken word meets the written vow.",
+    "title": "Two timeless paths, one practice",
+    "vachikaRoles": "Speaker · Reciter · Chanter",
+    "vachikaRoot": "Derived from the Sanskrit root \"Vāc\" — the spoken word, sacred speech.",
+    "lekhiniRoles": "Writer · Scribe",
+    "lekhiniRoot": "Derived from the Sanskrit root \"Likh\" — to write, to inscribe with intent.",
+    "conclusion": "Together, Vachika Lekhini unites the two timeless paths of mantra practice — spoken devotion and written devotion."
+  },
+  "practice": {
+    "eyebrow": "Three Ways to Practice",
+    "title": "Choose how your devotion flows",
+    "intro": "Voice, hand, or stillness — every path of japa, honoured and counted.",
+    "voiceTitle": "Voice Chanting",
+    "voicePoints": [
+      "AI-powered offline mantra recognition",
+      "Count hands-free while you chant",
+      "Your voice never leaves the device"
+    ],
+    "writingTitle": "Handwriting Practice",
+    "writingPoints": [
+      "Write mantras digitally with grace",
+      "Upload handwritten pages to verify",
+      "Offline OCR preserves the tradition"
+    ],
+    "manualTitle": "Manual Counter",
+    "manualPoints": [
+      "An elegant digital mala",
+      "Tap to count, breath by breath",
+      "Perfect for silent meditation"
+    ]
+  },
+  "features": {
+    "eyebrow": "Features",
+    "title": "Everything a devotee needs",
+    "intro": "A complete sadhana companion — crafted with the care of a temple and the precision of modern technology.",
+    "items": [
+      { "title": "Goal-Based Sadhana", "desc": "Set daily, monthly, or lifetime mantra goals and watch devotion compound." },
+      { "title": "Streaks & Milestones", "desc": "Build unbroken discipline with streaks and sacred milestone rewards." },
+      { "title": "Family Profiles", "desc": "One device, many devotees — each with their own private journey." },
+      { "title": "Global Sadhanas", "desc": "Join collective chanting movements happening across the world." },
+      { "title": "Practice Circle", "desc": "A community of devotees walking the path alongside you." },
+      { "title": "Daily Reminders", "desc": "Gentle, mindful nudges that keep your practice steady." },
+      { "title": "Sruthi Ambience", "desc": "Immersive tanpura and temple soundscapes for deeper focus." },
+      { "title": "Share Your Journey", "desc": "Celebrate milestones with beautiful, shareable cards." },
+      { "title": "Rewards Store", "desc": "Turn earned points into meaningful spiritual rewards." }
+    ]
+  },
+  "mantras": {
+    "eyebrow": "Mantra Library",
+    "title": "A mandala of sacred intentions",
+    "intro": "Eight gateways of devotion. Hover a petal to reveal its purpose.",
+    "cats": [
+      { "name": "Wealth & Prosperity", "desc": "Invoke Lakshmi and Kubera for abundance, fortune, and sustained prosperity." },
+      { "name": "Peace & Calm", "desc": "Still the restless mind and settle into serene, unshakeable inner peace." },
+      { "name": "Healing", "desc": "Mantras of restoration for body, mind, and spirit — vitality renewed." },
+      { "name": "Protection", "desc": "Surround yourself with a shield of divine grace against all adversity." },
+      { "name": "Strength & Courage", "desc": "Awaken inner power, fearlessness, and the resolve to face any trial." },
+      { "name": "Spiritual Liberation", "desc": "Mantras that loosen worldly bonds and turn the soul toward freedom." },
+      { "name": "Wisdom & Enlightenment", "desc": "Illuminate the intellect with clarity, knowledge, and higher understanding." },
+      { "name": "Devotion", "desc": "Deepen pure love and surrender at the feet of the Divine." }
+    ]
+  },
+  "dashboard": {
+    "eyebrow": "Goals · Streaks · Rewards",
+    "title": "Watch devotion become a discipline",
+    "intro": "Every chant counted, every streak honoured, every milestone a celebration.",
+    "panelEyebrow": "Your Sadhana",
+    "panelTitle": "Daily Dashboard",
+    "onARoll": "On a roll",
+    "todayCount": "Today's Count",
+    "goalSuffix": "/ 1,008 goal",
+    "currentStreak": "Current Streak",
+    "longestStreak": "Longest Streak",
+    "rewardPoints": "Reward Points",
+    "days": " days",
+    "points": " pts",
+    "goalProgress": "Daily goal progress",
+    "milestonesEyebrow": "Lifetime Milestones",
+    "milestonesTitle": "The path to a Crore",
+    "milestones": ["1 Lakh", "5 Lakh", "10 Lakh", "25 Lakh", "50 Lakh", "1 Crore"]
+  },
+  "languages": {
+    "eyebrow": "Multilingual Experience",
+    "title": "Pray in your mother tongue",
+    "intro": "Sacred sound knows no single script. Practice across India's many languages — in the words closest to your heart."
+  },
+  "movement": {
+    "eyebrow": "A Digital Spiritual Movement",
+    "title": "Where devotion meets technology",
+    "intro1": "For centuries, devotees have chanted the Divine Names of Bhagavan Sri Rama — seeking peace, strength, devotion, and spiritual growth. Today, we begin a new journey.",
+    "intro2": "Vachika Lekhini is being created to help devotees chant, count, track, and contribute their Nama Japa from anywhere in the world.",
+    "everyChant": "Whether you chant one Nama or one lakh Namas, every chant matters.",
+    "pillars": [
+      { "title": "Chant Anytime", "desc": "From anywhere in the world, your practice is always within reach." },
+      { "title": "Track Your Nama Japa", "desc": "Every count preserved — whether one Nama or one lakh." },
+      { "title": "Join a Global Community", "desc": "Chant alongside devotees united by the Divine Name." },
+      { "title": "Be Part of Something Eternal", "desc": "A movement that outlives us all." }
+    ],
+    "closing": "This is more than an app. It is a movement dedicated to spreading the Divine Name and bringing devotees together through collective chanting.",
+    "beginning": "And this is only the beginning…"
+  },
+  "privacy": {
+    "eyebrow": "Privacy First",
+    "title": "Your Practice Belongs To You",
+    "desc": "Devotion is sacred and private. Everything happens on your device — nothing is uploaded, tracked, or sold. Ever.",
+    "promises": [
+      "Offline Voice Recognition",
+      "Offline OCR",
+      "No Cloud Processing",
+      "No Firebase",
+      "No Ad Networks",
+      "No Analytics SDKs",
+      "Complete Data Deletion"
+    ]
+  },
+  "about": {
+    "eyebrow": "About the Company",
+    "company": "Srinishtha Technologies LLP",
+    "desc": "Building technology that serves India's spiritual and cultural heritage with respect, privacy, and care. Vachika Lekhini is our offering to every devotee who walks the path of the sacred name.",
+    "tagline": "Where ancient devotion meets modern craftsmanship."
+  },
+  "cta": {
+    "title": "Begin Your Sacred Journey",
+    "subtext": "Transform daily chanting into a lifelong practice of devotion, discipline, and inner growth.",
+    "joinEarly": "Join Early Access",
+    "comingSoon": "Coming Soon"
+  },
+  "footer": {
+    "tagline": "Chant with Purpose · Write with Devotion · Track with Pride.",
+    "explore": "Explore",
+    "more": "More",
+    "comingSoon": "Coming Soon",
+    "movement": "Movement",
+    "about": "About",
+    "earlyAccess": "Early Access",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "rights": "All rights reserved.",
+    "poweredBy": "Powered by"
+  },
+  "common": {
+    "backToTop": "Back to top"
+  }
+}

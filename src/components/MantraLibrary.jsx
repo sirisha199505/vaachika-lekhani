@@ -1,29 +1,29 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import SectionHeading from "./SectionHeading";
+import { useI18n } from "../i18n/I18nProvider";
 
-const CATS = [
-  { icon: "💰", name: "Wealth & Prosperity", deva: "श्री", desc: "Invoke Lakshmi and Kubera for abundance, fortune, and sustained prosperity." },
-  { icon: "☮", name: "Peace & Calm", deva: "शांति", desc: "Still the restless mind and settle into serene, unshakeable inner peace." },
-  { icon: "💚", name: "Healing", deva: "धन्वंतरि", desc: "Mantras of restoration for body, mind, and spirit — vitality renewed." },
-  { icon: "🛡", name: "Protection", deva: "दुर्गा", desc: "Surround yourself with a shield of divine grace against all adversity." },
-  { icon: "💪", name: "Strength & Courage", deva: "हनुमान", desc: "Awaken inner power, fearlessness, and the resolve to face any trial." },
-  { icon: "🕊", name: "Spiritual Liberation", deva: "मोक्ष", desc: "Mantras that loosen worldly bonds and turn the soul toward freedom." },
-  { icon: "🌟", name: "Wisdom & Enlightenment", deva: "सरस्वती", desc: "Illuminate the intellect with clarity, knowledge, and higher understanding." },
-  { icon: "🙏", name: "Devotion", deva: "भक्ति", desc: "Deepen pure love and surrender at the feet of the Divine." },
-];
+const ICONS = ["💰", "☮", "💚", "🛡", "💪", "🕊", "🌟", "🙏"];
+const DEVA = ["श्री", "शांति", "धन्वंतरि", "दुर्गा", "हनुमान", "मोक्ष", "सरस्वती", "भक्ति"];
 
 export default function MantraLibrary() {
+  const { t } = useI18n();
   const [active, setActive] = useState(0);
   const R = 42; // radius as % of the ring container
+  const CATS = t("mantras.cats").map((c, i) => ({
+    icon: ICONS[i],
+    deva: DEVA[i],
+    name: c.name,
+    desc: c.desc,
+  }));
 
   return (
     <section id="mantras" className="section">
       <div className="container-x">
         <SectionHeading
-          eyebrow="Mantra Library"
-          title="A mandala of sacred intentions"
-          intro="Eight gateways of devotion. Hover a petal to reveal its purpose."
+          eyebrow={t("mantras.eyebrow")}
+          title={t("mantras.title")}
+          intro={t("mantras.intro")}
         />
 
         <div className="mt-16 grid items-center gap-12 lg:grid-cols-2">

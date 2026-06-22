@@ -1,19 +1,21 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import PhoneMockup from "./PhoneMockup";
+import { useI18n } from "../i18n/I18nProvider";
 
 const EASE = [0.22, 1, 0.36, 1];
 
 function StoreBadge({ store }) {
+  const { t } = useI18n();
   return (
     <div className="gold-hairline flex items-center gap-3 rounded-2xl px-4 py-2.5">
       <span className="text-2xl">{store === "apple" ? "" : "▶"}</span>
       <div className="text-left leading-tight">
         <p className="text-[10px] uppercase tracking-widest text-muted/70">
-          Coming soon on
+          {t("hero.comingSoonOn")}
         </p>
         <p className="text-sm font-600 text-ink">
-          {store === "apple" ? "App Store" : "Google Play"}
+          {store === "apple" ? t("hero.appStore") : t("hero.googlePlay")}
         </p>
       </div>
     </div>
@@ -21,6 +23,7 @@ function StoreBadge({ store }) {
 }
 
 export default function Hero() {
+  const { t } = useI18n();
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -52,7 +55,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.1, ease: EASE }}
-            className="mt-2 font-display text-5xl sm:text-6xl md:text-[3.6rem] lg:text-6xl font-800 leading-[1.02] text-gold-gradient"
+            className="brand-latin mt-2 font-display text-5xl sm:text-6xl md:text-[3.6rem] lg:text-6xl font-800 leading-[1.02] text-gold-gradient"
           >
             Vachika Lekhini
           </motion.h1>
@@ -63,7 +66,7 @@ export default function Hero() {
             transition={{ duration: 0.9, delay: 0.2, ease: EASE }}
             className="mt-4 font-serif-elegant text-xl md:text-2xl text-amber"
           >
-            Chant with Purpose. Write with Devotion.
+            {t("hero.tagline")}
           </motion.p>
 
           <motion.p
@@ -72,9 +75,7 @@ export default function Hero() {
             transition={{ duration: 0.9, delay: 0.32, ease: EASE }}
             className="mx-auto lg:mx-0 mt-4 max-w-xl text-sm md:text-base leading-relaxed text-muted"
           >
-            A sacred digital companion that helps practitioners count, write, and
-            deepen their mantra sadhana through voice, handwriting, and mindful
-            practice.
+            {t("hero.desc")}
           </motion.p>
 
           <motion.div
@@ -87,13 +88,13 @@ export default function Hero() {
               onClick={() => document.getElementById("cta")?.scrollIntoView({ behavior: "smooth" })}
               className="btn-sacred"
             >
-              Join Early Access →
+              {t("hero.joinEarly")} →
             </button>
             <button
               onClick={() => document.getElementById("practice")?.scrollIntoView({ behavior: "smooth" })}
               className="btn-ghost"
             >
-              Explore Features
+              {t("hero.exploreFeatures")}
             </button>
           </motion.div>
 
@@ -134,7 +135,7 @@ export default function Hero() {
         style={{ opacity: fade }}
         className="absolute bottom-4 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-muted/60 lg:flex"
       >
-        <span className="text-[10px] uppercase tracking-[0.3em]">Scroll</span>
+        <span className="text-[10px] uppercase tracking-[0.3em]">{t("hero.scroll")}</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}

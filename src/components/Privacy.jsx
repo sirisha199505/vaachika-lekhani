@@ -1,18 +1,11 @@
 import { motion } from "framer-motion";
 import Reveal from "./Reveal";
 import { fadeUp, stagger, viewport } from "../lib/motion";
-
-const PROMISES = [
-  "Offline Voice Recognition",
-  "Offline OCR",
-  "No Cloud Processing",
-  "No Firebase",
-  "No Ad Networks",
-  "No Analytics SDKs",
-  "Complete Data Deletion",
-];
+import { useI18n } from "../i18n/I18nProvider";
 
 export default function Privacy() {
+  const { t } = useI18n();
+  const PROMISES = t("privacy.promises");
   return (
     <section
       id="privacy"
@@ -73,14 +66,13 @@ export default function Privacy() {
 
         {/* Content */}
         <div>
-          <span className="eyebrow">Privacy First</span>
+          <span className="eyebrow">{t("privacy.eyebrow")}</span>
           <Reveal as="h2" className="mt-3 font-display text-4xl md:text-5xl font-800 text-gold-gradient">
-            Your Practice Belongs To You
+            {t("privacy.title")}
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted">
-              Devotion is sacred and private. Everything happens on your device —
-              nothing is uploaded, tracked, or sold. Ever.
+              {t("privacy.desc")}
             </p>
           </Reveal>
 

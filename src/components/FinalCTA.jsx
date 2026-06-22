@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import Reveal from "./Reveal";
 import { viewport } from "../lib/motion";
+import { useI18n } from "../i18n/I18nProvider";
 
 export default function FinalCTA() {
+  const { t } = useI18n();
   return (
     <section id="cta" className="relative overflow-hidden py-32 md:py-44">
       {/* glowing temple horizon */}
@@ -44,13 +46,12 @@ export default function FinalCTA() {
         </Reveal>
         <Reveal delay={0.1} as="h2">
           <span className="mt-4 block font-display text-5xl md:text-7xl font-900 leading-[1.02] text-gold-gradient text-glow">
-            Begin Your Sacred Journey
+            {t("cta.title")}
           </span>
         </Reveal>
         <Reveal delay={0.2}>
           <p className="mx-auto mt-6 max-w-2xl text-lg md:text-xl leading-relaxed text-ink/90">
-            Transform daily chanting into a lifelong practice of devotion,
-            discipline, and inner growth.
+            {t("cta.subtext")}
           </p>
         </Reveal>
 
@@ -62,10 +63,10 @@ export default function FinalCTA() {
           className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
           <a href="#cta" className="btn-sacred text-lg">
-            Join Early Access →
+            {t("cta.joinEarly")} →
           </a>
           <span className="rounded-full border border-gold/30 px-6 py-3 text-sm uppercase tracking-[0.25em] text-gold/80">
-            Coming Soon
+            {t("cta.comingSoon")}
           </span>
         </motion.div>
 

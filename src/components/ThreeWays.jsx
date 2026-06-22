@@ -1,48 +1,23 @@
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
 import { fadeUp, stagger, viewport } from "../lib/motion";
-
-const WAYS = [
-  {
-    icon: "🎙",
-    title: "Voice Chanting",
-    tag: "Vāchika Japa",
-    points: [
-      "AI-powered offline mantra recognition",
-      "Count hands-free while you chant",
-      "Your voice never leaves the device",
-    ],
-  },
-  {
-    icon: "✍",
-    title: "Handwriting Practice",
-    tag: "Likhita Japa",
-    points: [
-      "Write mantras digitally with grace",
-      "Upload handwritten pages to verify",
-      "Offline OCR preserves the tradition",
-    ],
-  },
-  {
-    icon: "👆",
-    title: "Manual Counter",
-    tag: "Mānasika Japa",
-    points: [
-      "An elegant digital mala",
-      "Tap to count, breath by breath",
-      "Perfect for silent meditation",
-    ],
-  },
-];
+import { useI18n } from "../i18n/I18nProvider";
 
 export default function ThreeWays() {
+  const { t } = useI18n();
+  const WAYS = [
+    { icon: "🎙", tag: "Vāchika Japa", title: t("practice.voiceTitle"), points: t("practice.voicePoints") },
+    { icon: "✍", tag: "Likhita Japa", title: t("practice.writingTitle"), points: t("practice.writingPoints") },
+    { icon: "👆", tag: "Mānasika Japa", title: t("practice.manualTitle"), points: t("practice.manualPoints") },
+  ];
+
   return (
     <section id="practice" className="section">
       <div className="container-x">
         <SectionHeading
-          eyebrow="Three Ways to Practice"
-          title="Choose how your devotion flows"
-          intro="Voice, hand, or stillness — every path of japa, honoured and counted."
+          eyebrow={t("practice.eyebrow")}
+          title={t("practice.title")}
+          intro={t("practice.intro")}
         />
 
         <motion.div
@@ -54,7 +29,7 @@ export default function ThreeWays() {
         >
           {WAYS.map((w) => (
             <motion.article
-              key={w.title}
+              key={w.tag}
               variants={fadeUp}
               whileHover={{ y: -10 }}
               className="group glass relative overflow-hidden rounded-3xl p-8 transition-shadow duration-500 hover:glow-gold"
@@ -66,7 +41,7 @@ export default function ThreeWays() {
                 <span className="animate-floaty">{w.icon}</span>
               </div>
 
-              <p className="font-deva text-sm text-amber/80">{w.tag}</p>
+              <p className="brand-latin text-sm text-amber/80">{w.tag}</p>
               <h3 className="mt-1 font-display text-2xl font-700 text-gold-gradient">
                 {w.title}
               </h3>

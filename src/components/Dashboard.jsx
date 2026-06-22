@@ -3,31 +3,37 @@ import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 import CountUp from "./CountUp";
 import { fadeUp, stagger, viewport } from "../lib/motion";
+import { useI18n } from "../i18n/I18nProvider";
 
-const STATS = [
-  { label: "Today's Count", to: 1188, of: "/ 1,008 goal", accent: true },
-  { label: "Current Streak", to: 64, suffix: " days" },
-  { label: "Longest Streak", to: 121, suffix: " days" },
-  { label: "Reward Points", to: 8450, suffix: " pts" },
-];
-
-const MILESTONES = [
-  { label: "1 Lakh", value: "1,00,000", done: true },
-  { label: "5 Lakh", value: "5,00,000", done: true },
-  { label: "10 Lakh", value: "10,00,000", done: true },
-  { label: "25 Lakh", value: "25,00,000", done: false, current: true },
-  { label: "50 Lakh", value: "50,00,000", done: false },
-  { label: "1 Crore", value: "1,00,00,000", done: false },
+const MILE_VALUES = ["1,00,000", "5,00,000", "10,00,000", "25,00,000", "50,00,000", "1,00,00,000"];
+const MILE_STATE = [
+  { done: true },
+  { done: true },
+  { done: true },
+  { done: false, current: true },
+  { done: false },
+  { done: false },
 ];
 
 export default function Dashboard() {
+  const { t } = useI18n();
+  const days = t("dashboard.days");
+  const pts = t("dashboard.points");
+  const STATS = [
+    { label: t("dashboard.todayCount"), to: 1188, of: t("dashboard.goalSuffix"), accent: true },
+    { label: t("dashboard.currentStreak"), to: 64, suffix: days },
+    { label: t("dashboard.longestStreak"), to: 121, suffix: days },
+    { label: t("dashboard.rewardPoints"), to: 8450, suffix: pts },
+  ];
+  const milestones = t("dashboard.milestones");
+
   return (
     <section id="progress" className="section bg-geometry">
       <div className="container-x">
         <SectionHeading
-          eyebrow="Goals · Streaks · Rewards"
-          title="Watch devotion become a discipline"
-          intro="Every chant counted, every streak honoured, every milestone a celebration."
+          eyebrow={t("dashboard.eyebrow")}
+          title={t("dashboard.title")}
+          intro={t("dashboard.intro")}
         />
 
         <div className="mt-16 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
@@ -36,11 +42,11 @@ export default function Dashboard() {
             <div className="glass gold-hairline h-full rounded-3xl p-7">
               <div className="mb-6 flex items-center justify-between">
                 <div>
-                  <p className="eyebrow">Your Sadhana</p>
-                  <p className="font-display text-xl text-gold">Daily Dashboard</p>
+                  <p className="eyebrow">{t("dashboard.panelEyebrow")}</p>
+                  <p className="font-display text-xl text-gold">{t("dashboard.panelTitle")}</p>
                 </div>
                 <span className="rounded-full bg-saffron/20 px-3 py-1 text-xs text-amber">
-                  🔥 On a roll
+                  🔥 {t("dashboard.onARoll")}
                 </span>
               </div>
 
@@ -75,7 +81,7 @@ export default function Dashboard() {
               {/* progress bar */}
               <div className="mt-6">
                 <div className="mb-2 flex justify-between text-xs text-muted">
-                  <span>Daily goal progress</span>
+                  <span>{t("dashboard.goalProgress")}</span>
                   <span className="text-gold">118%</span>
                 </div>
                 <div className="h-3 w-full overflow-hidden rounded-full bg-bg-2">
@@ -94,41 +100,44 @@ export default function Dashboard() {
           {/* Milestone timeline */}
           <Reveal delay={0.15}>
             <div className="glass gold-hairline h-full rounded-3xl p-7">
-              <p className="eyebrow">Lifetime Milestones</p>
-              <p className="font-display text-xl text-gold">The path to a Crore</p>
+              <p className="eyebrow">{t("dashboard.milestonesEyebrow")}</p>
+              <p className="font-display text-xl text-gold">{t("dashboard.milestonesTitle")}</p>
 
               <div className="relative mt-6 pl-6">
                 <div className="absolute left-[7px] top-2 bottom-2 w-px bg-gradient-to-b from-gold via-gold/40 to-transparent" />
                 <div className="flex flex-col gap-5">
-                  {MILESTONES.map((m) => (
-                    <div key={m.label} className="relative flex items-center gap-4">
-                      <span
-                        className={`absolute -left-6 grid h-4 w-4 place-items-center rounded-full ${
-                          m.done
-                            ? "bg-gold text-bg"
-                            : m.current
-                            ? "bg-saffron animate-pulse-glow"
-                            : "border border-gold/30 bg-bg"
-                        }`}
-                      >
-                        {m.done && (
-                          <svg width="9" height="9" viewBox="0 0 12 12" fill="none">
-                            <path d="M2 6l2.5 2.5L10 3" stroke="#0d0703" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        )}
-                      </span>
-                      <div className="flex flex-1 items-center justify-between">
+                  {milestones.map((label, i) => {
+                    const m = MILE_STATE[i];
+                    return (
+                      <div key={i} className="relative flex items-center gap-4">
                         <span
-                          className={`font-display text-lg ${
-                            m.done || m.current ? "text-gold" : "text-muted/60"
+                          className={`absolute -left-6 grid h-4 w-4 place-items-center rounded-full ${
+                            m.done
+                              ? "bg-gold text-bg"
+                              : m.current
+                              ? "bg-saffron animate-pulse-glow"
+                              : "border border-gold/30 bg-bg"
                           }`}
                         >
-                          {m.label}
+                          {m.done && (
+                            <svg width="9" height="9" viewBox="0 0 12 12" fill="none">
+                              <path d="M2 6l2.5 2.5L10 3" stroke="#0d0703" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                          )}
                         </span>
-                        <span className="font-deva text-sm text-muted/70">{m.value}</span>
+                        <div className="flex flex-1 items-center justify-between">
+                          <span
+                            className={`font-display text-lg ${
+                              m.done || m.current ? "text-gold" : "text-muted/60"
+                            }`}
+                          >
+                            {label}
+                          </span>
+                          <span className="font-deva text-sm text-muted/70">{MILE_VALUES[i]}</span>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             </div>

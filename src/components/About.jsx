@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import { useI18n } from "../i18n/I18nProvider";
 
 function CompanySeal() {
   return (
@@ -22,6 +23,7 @@ function CompanySeal() {
 }
 
 export default function About() {
+  const { t } = useI18n();
   return (
     <section id="about" className="section">
       <div className="container-x">
@@ -29,17 +31,15 @@ export default function About() {
           <div className="glass gold-hairline mx-auto flex max-w-4xl flex-col items-center gap-10 rounded-[2rem] p-10 text-center md:flex-row md:text-left">
             <CompanySeal />
             <div>
-              <span className="eyebrow">About the Company</span>
-              <h2 className="mt-3 font-display text-3xl md:text-4xl font-700 text-gold-gradient">
-                Srinishtha Technologies Pvt. Ltd.
+              <span className="eyebrow">{t("about.eyebrow")}</span>
+              <h2 className="brand-latin mt-3 font-display text-3xl md:text-4xl font-700 text-gold-gradient">
+                {t("about.company")}
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-muted">
-                Building technology that serves India's spiritual and cultural
-                heritage with respect, privacy, and care. Vachika Lekhini is our
-                offering to every devotee who walks the path of the sacred name.
+                {t("about.desc")}
               </p>
               <p className="mt-5 font-serif-elegant text-xl italic text-amber">
-                Where ancient devotion meets modern craftsmanship.
+                {t("about.tagline")}
               </p>
             </div>
           </div>

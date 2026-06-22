@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import BrandMark from "./BrandMark";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useI18n } from "../i18n/I18nProvider";
 
 const LINKS = [
-  ["Meaning", "meaning"],
-  ["Practice", "practice"],
-  ["Features", "features"],
-  ["Mantras", "mantras"],
-  ["Privacy", "privacy"],
+  ["nav.meaning", "meaning"],
+  ["nav.practice", "practice"],
+  ["nav.features", "features"],
+  ["nav.mantras", "mantras"],
+  ["nav.privacy", "privacy"],
 ];
 
 export default function NavBar() {
+  const { t } = useI18n();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -44,47 +47,51 @@ export default function NavBar() {
           <button
             onClick={() => go("top")}
             className="flex items-center gap-3"
-            aria-label="Vachika Lekhini home"
+            aria-label={t("nav.home")}
           >
             <BrandMark size={40} rounded={12} />
-            <span className="font-display text-lg font-700 tracking-wide text-gold-gradient">
+            <span className="brand-latin font-display text-lg font-700 tracking-wide text-gold-gradient">
               Vachika Lekhini
             </span>
           </button>
 
-          <div className="hidden items-center gap-8 md:flex">
+          <div className="hidden items-center gap-7 md:flex">
             {LINKS.map(([label, id]) => (
               <button
                 key={id}
                 onClick={() => go(id)}
                 className="text-sm font-medium text-muted transition-colors hover:text-gold"
               >
-                {label}
+                {t(label)}
               </button>
             ))}
+            <LanguageSwitcher />
             <button onClick={() => go("cta")} className="btn-sacred !py-2.5 !px-6 text-sm">
-              Join Early Access
+              {t("nav.join")}
             </button>
           </div>
 
-          <button
-            className="md:hidden text-gold"
-            onClick={() => setOpen((v) => !v)}
-            aria-label="Toggle menu"
-            aria-expanded={open}
-          >
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              {open ? (
-                <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
-              ) : (
-                <>
-                  <path d="M4 7h16" strokeLinecap="round" />
-                  <path d="M4 12h16" strokeLinecap="round" />
-                  <path d="M4 17h16" strokeLinecap="round" />
-                </>
-              )}
-            </svg>
-          </button>
+          <div className="flex items-center gap-2 md:hidden">
+            <LanguageSwitcher compact />
+            <button
+              className="text-gold"
+              onClick={() => setOpen((v) => !v)}
+              aria-label={t("nav.menu")}
+              aria-expanded={open}
+            >
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                {open ? (
+                  <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
+                ) : (
+                  <>
+                    <path d="M4 7h16" strokeLinecap="round" />
+                    <path d="M4 12h16" strokeLinecap="round" />
+                    <path d="M4 17h16" strokeLinecap="round" />
+                  </>
+                )}
+              </svg>
+            </button>
+          </div>
         </nav>
       </div>
 
@@ -103,11 +110,11 @@ export default function NavBar() {
                   onClick={() => go(id)}
                   className="rounded-lg px-3 py-3 text-left text-base text-muted hover:bg-gold/10 hover:text-gold"
                 >
-                  {label}
+                  {t(label)}
                 </button>
               ))}
               <button onClick={() => go("cta")} className="btn-sacred mt-2 justify-center">
-                Join Early Access
+                {t("nav.join")}
               </button>
             </div>
           </motion.div>
