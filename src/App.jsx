@@ -13,6 +13,7 @@ import Privacy from "./components/Privacy";
 import About from "./components/About";
 import FinalCTA from "./components/FinalCTA";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function App() {
   return (
@@ -33,6 +34,7 @@ export default function App() {
         <FinalCTA />
       </main>
       <Footer />
+      <ScrollToTop />
     </>
   );
 }

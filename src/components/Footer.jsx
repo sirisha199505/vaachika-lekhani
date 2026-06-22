@@ -51,7 +51,10 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-gold/10 pt-6 text-center text-xs text-muted/60 md:flex-row md:text-left">
-          <p>© {year} Srinishtha Technologies Pvt. Ltd. All rights reserved.</p>
+          <p>
+            © {year} Vachika Lekhini · Powered by{" "}
+            <span className="text-gold/80">Srinishtha Technologies LLP</span>
+          </p>
           <p className="font-deva text-amber/60">श्री राम जय राम जय जय राम</p>
         </div>
       </div>
