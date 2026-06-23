@@ -8,7 +8,6 @@ export default function ThreeWays() {
   const WAYS = [
     { icon: "🎙", tag: "Vāchika Japa", title: t("practice.voiceTitle"), points: t("practice.voicePoints") },
     { icon: "✍", tag: "Likhita Japa", title: t("practice.writingTitle"), points: t("practice.writingPoints") },
-    { icon: "👆", tag: "Mānasika Japa", title: t("practice.manualTitle"), points: t("practice.manualPoints") },
   ];
 
   return (
@@ -25,7 +24,7 @@ export default function ThreeWays() {
           initial="hidden"
           whileInView="show"
           viewport={viewport}
-          className="mt-10 grid gap-6 md:mt-14 md:grid-cols-3 md:gap-7"
+          className="mt-10 grid gap-6 md:mt-14 md:grid-cols-2 md:gap-7"
         >
           {WAYS.map((w) => (
             <motion.article

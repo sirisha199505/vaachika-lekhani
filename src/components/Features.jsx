@@ -5,9 +5,14 @@ import { useI18n } from "../i18n/I18nProvider";
 
 const ICONS = ["🎯", "🔥", "👨‍👩‍👧‍👦", "🌐", "🏆", "🔔", "🎵", "📤", "🏪"];
 
+// Hidden feature indices: 2 = Family Profiles, 4 = Practice Circle.
+const HIDDEN = new Set([2, 4]);
+
 export default function Features() {
   const { t } = useI18n();
-  const items = t("features.items");
+  const items = t("features.items")
+    .map((f, i) => ({ f, icon: ICONS[i] }))
+    .filter((_, i) => !HIDDEN.has(i));
 
   return (
     <section id="features" className="section bg-geometry">
@@ -25,7 +30,7 @@ export default function Features() {
           viewport={viewport}
           className="mt-10 grid gap-4 sm:grid-cols-2 md:mt-14 md:gap-5 lg:grid-cols-3"
         >
-          {items.map((f, i) => (
+          {items.map(({ f, icon }, i) => (
             <motion.div
               key={i}
               variants={fadeUp}
@@ -35,7 +40,7 @@ export default function Features() {
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <div className="flex items-start gap-4">
                 <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-saffron/25 to-gold/10 text-2xl transition-transform duration-500 group-hover:scale-110">
-                  {ICONS[i]}
+                  {icon}
                 </span>
                 <div>
                   <h3 className="font-display text-lg font-700 text-gold transition-colors group-hover:text-amber">

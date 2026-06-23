@@ -4,20 +4,15 @@ import { fadeUp, stagger, viewport } from "../lib/motion";
 import { useI18n } from "../i18n/I18nProvider";
 
 const LANGS = [
-  { name: "Hindi", glyph: "अ", desc: "Devanagari script", sample: "राम राम" },
-  { name: "Sanskrit", glyph: "ॐ", desc: "Devanagari script", sample: "श्रीराम" },
   { name: "Telugu", glyph: "అ", desc: "Telugu script", sample: "రామ రామ" },
-  { name: "Kannada", glyph: "ಅ", desc: "Kannada script", sample: "ರಾಮ ರಾಮ" },
-  { name: "Tamil", glyph: "அ", desc: "Tamil script", sample: "ராம ராம" },
-  { name: "Malayalam", glyph: "അ", desc: "Malayalam script", sample: "രാമ രാമ" },
-  { name: "Bengali", glyph: "অ", desc: "Bangla script", sample: "রাম রাম" },
-  { name: "Gujarati", glyph: "અ", desc: "Gujarati script", sample: "રામ રામ" },
+  { name: "Hindi", glyph: "अ", desc: "Devanagari script", sample: "राम राम" },
   { name: "English", glyph: "A", desc: "Roman transliteration", sample: "Rama Rama" },
+  { name: "Kannada", glyph: "ಅ", desc: "Kannada script", sample: "ರಾಮ ರಾಮ" },
 ];
 
 // Sacred name "Rama" across scripts for the flowing strip
 const NAMES = [
-  "राम", "రామ", "ರಾಮ", "ராம", "രാമ", "রাম", "રામ", "ਰਾਮ", "ରାମ", "Rama",
+  "రామ", "राम", "Rama", "ರಾಮ",
 ];
 
 export default function Languages() {
