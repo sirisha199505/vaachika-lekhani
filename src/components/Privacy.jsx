@@ -15,14 +15,14 @@ export default function Privacy() {
           "radial-gradient(100% 80% at 50% 0%, #fdf1d8 0%, #f7e8cd 55%, #f2e0c0 100%)",
       }}
     >
-      <div className="container-x grid items-center gap-14 lg:grid-cols-2">
+      <div className="container-x grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
         {/* Shield */}
         <Reveal>
-          <div className="relative mx-auto grid h-[340px] w-[340px] place-items-center">
-            <div className="absolute h-64 w-64 rounded-full bg-gold/20 blur-3xl animate-pulse-glow" />
+          <div className="relative mx-auto grid h-[240px] w-[240px] place-items-center md:h-[320px] md:w-[320px]">
+            <div className="absolute h-52 w-52 rounded-full bg-gold/20 blur-3xl animate-pulse-glow md:h-64 md:w-64" />
             <motion.svg
               viewBox="0 0 200 230"
-              className="relative h-[300px] drop-glow"
+              className="relative h-[220px] drop-glow md:h-[290px]"
               initial={{ scale: 0.9, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={viewport}

@@ -6,8 +6,8 @@ export default function Footer() {
   const year = 2026;
   return (
     <footer className="relative border-t border-gold/15 bg-bg">
-      <div className="container-x py-14">
-        <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+      <div className="container-x py-8 md:py-9">
+        <div className="flex flex-col gap-7 md:flex-row md:items-start md:justify-between md:gap-10">
           <div className="max-w-sm">
             <div className="flex items-center gap-3">
               <BrandMark size={44} rounded={13} />
@@ -23,7 +23,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-10 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 md:gap-10">
             <FooterCol
               title={t("footer.explore")}
               links={[
@@ -51,12 +51,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-gold/10 pt-6 text-center text-xs text-muted/60 md:flex-row md:text-left">
-          <p>
-            © {year} Vaachaka Lekhini · {t("footer.poweredBy")}{" "}
+        <div className="mt-7 flex flex-col items-center gap-3 border-t border-gold/10 pt-5 text-center text-xs text-muted/60 md:mt-8 md:grid md:grid-cols-3 md:items-center md:gap-4">
+          <p className="md:text-left">© {year} Vaachaka Lekhini</p>
+          <p className="font-deva text-sm text-amber/70 md:text-center">श्री राम जय राम जय जय राम</p>
+          <p className="md:text-right">
+            {t("footer.poweredBy")}{" "}
             <span className="brand-latin text-gold/80">Srinishtha Technologies LLP</span>
           </p>
-          <p className="font-deva text-amber/60">श्री राम जय राम जय जय राम</p>
         </div>
       </div>
     </footer>

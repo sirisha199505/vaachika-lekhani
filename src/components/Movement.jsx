@@ -48,7 +48,7 @@ export default function Movement() {
           initial="hidden"
           whileInView="show"
           viewport={viewport}
-          className="mx-auto mt-16 grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-4"
+          className="mx-auto mt-10 grid max-w-5xl gap-4 sm:grid-cols-2 md:mt-14 md:gap-5 lg:grid-cols-4"
         >
           {pillars.map((p, i) => (
             <motion.div
@@ -69,7 +69,7 @@ export default function Movement() {
         </motion.div>
 
         <Reveal delay={0.2}>
-          <div className="mx-auto mt-16 max-w-3xl text-center">
+          <div className="mx-auto mt-12 max-w-3xl text-center">
             <p className="font-serif-elegant text-2xl md:text-3xl italic leading-relaxed text-ink/90">
               {t("movement.closing")}
             </p>

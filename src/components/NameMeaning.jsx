@@ -12,7 +12,7 @@ export default function NameMeaning() {
 
   return (
     <section id="meaning" className="section bg-geometry">
-      <div className="container-x grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+      <div className="container-x grid items-center gap-8 lg:grid-cols-2 lg:gap-20">
         {/* Left — calligraphy */}
         <Reveal variants={fadeUp}>
           <div className="relative mx-auto max-w-md">
@@ -20,15 +20,15 @@ export default function NameMeaning() {
               className="absolute inset-0 -z-10 rounded-[2rem] blur-2xl"
               style={{ background: "radial-gradient(circle, rgba(244,201,93,0.18), transparent 70%)" }}
             />
-            <div className="gold-hairline rounded-[2rem] px-8 py-14 text-center">
-              <p className="eyebrow mb-8">{t("meaning.sacredName")}</p>
-              <p className="font-deva text-6xl md:text-7xl font-800 text-saffron-gradient leading-tight text-glow">
+            <div className="gold-hairline rounded-[2rem] px-7 py-9 text-center md:py-11">
+              <p className="eyebrow mb-5">{t("meaning.sacredName")}</p>
+              <p className="font-deva text-5xl md:text-7xl font-800 text-saffron-gradient text-glow">
                 वाचक
               </p>
-              <p className="font-deva text-6xl md:text-7xl font-800 text-gold-gradient leading-tight mt-2">
+              <p className="font-deva text-5xl md:text-7xl font-800 text-gold-gradient">
                 लेखिनी
               </p>
-              <div className="divider-glyph my-8">
+              <div className="divider-glyph my-5">
                 <span className="text-gold/70">✶</span>
               </div>
               <p className="font-serif-elegant text-xl italic text-muted">

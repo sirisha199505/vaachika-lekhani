@@ -36,7 +36,7 @@ export default function Dashboard() {
           intro={t("dashboard.intro")}
         />
 
-        <div className="mt-16 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="mt-10 grid gap-6 md:mt-14 lg:grid-cols-[1.1fr_0.9fr]">
           {/* Stats panel */}
           <Reveal>
             <div className="glass gold-hairline h-full rounded-3xl p-7">

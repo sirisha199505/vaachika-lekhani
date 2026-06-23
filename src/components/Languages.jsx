@@ -32,7 +32,7 @@ export default function Languages() {
         />
 
         {/* flowing multilingual sacred-name strip */}
-        <div className="relative mt-12 overflow-hidden py-3 [mask-image:linear-gradient(90deg,transparent,#000_12%,#000_88%,transparent)]">
+        <div className="relative mt-8 overflow-hidden py-3 [mask-image:linear-gradient(90deg,transparent,#000_12%,#000_88%,transparent)]">
           <div className="flex w-max animate-marquee gap-10 whitespace-nowrap">
             {[...NAMES, ...NAMES].map((n, i) => (
               <span
@@ -51,7 +51,7 @@ export default function Languages() {
           initial="hidden"
           whileInView="show"
           viewport={viewport}
-          className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-8 grid gap-4 sm:grid-cols-2 md:gap-5 lg:grid-cols-3"
         >
           {LANGS.map((l) => (
             <motion.div

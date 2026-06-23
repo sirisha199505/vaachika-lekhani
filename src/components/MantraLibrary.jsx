@@ -26,7 +26,7 @@ export default function MantraLibrary() {
           intro={t("mantras.intro")}
         />
 
-        <div className="mt-16 grid items-center gap-12 lg:grid-cols-2">
+        <div className="mt-10 grid items-center gap-8 md:mt-14 lg:grid-cols-2 lg:gap-12">
           {/* Mandala ring */}
           <div className="relative mx-auto aspect-square w-full max-w-[460px]">
             {/* concentric rings */}

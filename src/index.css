@@ -321,7 +321,8 @@ body {
    ============================================================ */
 .section {
   position: relative;
-  padding-block: clamp(5rem, 12vw, 9rem);
+  /* tighter on phones, still composed on desktop */
+  padding-block: clamp(3rem, 7.5vw, 7.5rem);
 }
 .container-x {
   width: 100%;

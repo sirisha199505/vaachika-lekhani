@@ -25,7 +25,7 @@ export default function ThreeWays() {
           initial="hidden"
           whileInView="show"
           viewport={viewport}
-          className="mt-16 grid gap-7 md:grid-cols-3"
+          className="mt-10 grid gap-6 md:mt-14 md:grid-cols-3 md:gap-7"
         >
           {WAYS.map((w) => (
             <motion.article

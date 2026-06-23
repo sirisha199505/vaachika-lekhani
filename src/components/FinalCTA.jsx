@@ -6,7 +6,7 @@ import { useI18n } from "../i18n/I18nProvider";
 export default function FinalCTA() {
   const { t } = useI18n();
   return (
-    <section id="cta" className="relative overflow-hidden py-32 md:py-44">
+    <section id="cta" className="relative overflow-hidden py-20 md:py-28">
       {/* glowing temple horizon */}
       <div className="absolute inset-0 -z-10">
         <div
@@ -17,12 +17,12 @@ export default function FinalCTA() {
           }}
         />
         <motion.div
-          className="absolute left-1/2 bottom-0 h-72 w-72 -translate-x-1/2 rounded-full"
+          className="absolute left-1/2 bottom-0 h-40 w-64 -translate-x-1/2 rounded-full"
           style={{
             background:
-              "radial-gradient(circle, rgba(255,221,150,0.9), rgba(255,140,0,0.2) 55%, transparent)",
+              "radial-gradient(circle, rgba(255,221,150,0.8), rgba(255,140,0,0.15) 55%, transparent 72%)",
           }}
-          animate={{ opacity: [0.6, 1, 0.6], scale: [1, 1.08, 1] }}
+          animate={{ opacity: [0.55, 0.85, 0.55], scale: [1, 1.06, 1] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         />
         <svg

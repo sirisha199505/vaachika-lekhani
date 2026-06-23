@@ -23,7 +23,7 @@ export default function Features() {
           initial="hidden"
           whileInView="show"
           viewport={viewport}
-          className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-10 grid gap-4 sm:grid-cols-2 md:mt-14 md:gap-5 lg:grid-cols-3"
         >
           {items.map((f, i) => (
             <motion.div
